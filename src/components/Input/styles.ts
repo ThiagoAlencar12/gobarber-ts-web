@@ -1,6 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface ContainerProps {
+  isFocus: boolean;
+  isField: boolean;
+}
+
+export const Container = styled.div<ContainerProps>`
   background: #232129;
   color: #666360;
   border-radius: 10px;
@@ -12,10 +17,28 @@ export const Container = styled.div`
   align-items: center;
   margin-top: 8px;
 
+  & + div {
+    margin-top: 8px;
+  }
+
+  ${(props) =>
+    props.isFocus &&
+    css`
+      color: #ff9000;
+      border-color: #ff9000;
+    `}
+
+  ${(props) =>
+    props.isField &&
+    css`
+      color: #ff9000;
+    `}
+
   input {
     flex: 1;
     background: transparent;
     border: 0;
+    color: #fff;
 
     &::placeholder {
       color: #666360;
