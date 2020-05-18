@@ -51,6 +51,7 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
         onFocus={handleInputFocus}
         onBlur={handleBlur}
       />
+      {error}
     </S.Container>
   );
 };
