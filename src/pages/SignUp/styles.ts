@@ -18,7 +18,7 @@ export const Content = styled.div`
   justify-content: center;
 
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
 
   form {
     margin: 80px 0;
@@ -65,6 +65,6 @@ export const Content = styled.div`
 
 export const Background = styled.div`
   flex: 1;
-  background: url(${signUpBackground}) center no-repeat;
+  background: url(${signUpBackground}) no-repeat center;
   background-size: cover;
 `;
