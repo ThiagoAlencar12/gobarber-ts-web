@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useContext } from 'react';
+import React, { useRef, useCallback } from 'react';
 import * as Yup from 'yup';
 import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
 import { Form } from '@unform/web';
@@ -6,7 +6,7 @@ import { FormHandles } from '@unform/core';
 
 import { Container, Content, Background } from './styles';
 
-import { AuthContext } from '../../context/AuthContext';
+import { useAuth } from '../../hooks/AuthContext';
 
 import getErros from '../../utils/getValidationErrors';
 import logoImg from '../../assets/logo.svg';
@@ -22,7 +22,7 @@ interface DataSignIn {
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
-  const { singIn } = useContext(AuthContext);
+  const { singIn } = useAuth();
 
   const handleSubmit = useCallback(
     async (data: DataSignIn) => {
